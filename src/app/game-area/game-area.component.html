@@ -1,0 +1,18 @@
+<div class="overlay" *ngIf="isGameOver || isGameNotStarted">
+  <div class="overlay-content">
+    <h1 *ngIf="isGameOver">Game Over!</h1>
+    <h2 *ngIf="isGameOver">Your score: {{ score }}</h2>
+    <h1 *ngIf="isGameNotStarted">Welcome to Snake Game!</h1>
+    <button (click)="startGame()">Start</button>
+  </div>
+</div>
+<div class="game-info">
+  <p>Score: {{ score }}</p>
+</div>
+<div class="game-board">
+  <div
+    *ngFor="let cell of gridSize | fill; let i = index"
+    [class.snake]="isSnake(i)"
+    [class.food]="isFood(i)"
+  ></div>
+</div>

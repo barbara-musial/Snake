@@ -1,0 +1,61 @@
+@import "../../styles";
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--grid-cell-x-y-amount),
+    calc(var(--grid-cell-size) * 1px)
+  );
+  grid-template-rows: repeat(
+    var(--grid-cell-x-y-amount),
+    calc(var(--grid-cell-size) * 1px)
+  );
+  gap: 1px;
+  background-color: #2b061e;
+  margin: auto;
+  width: max-content;
+  border: 2px solid #875053;
+}
+.game-board div {
+  width: calc(var(--grid-cell-size) * 1px);
+  height: calc(var(--grid-cell-size) * 1px);
+  background-color: #2b061e;
+}
+.game-board div.snake {
+  background-color: #d2bf55;
+}
+.game-board div.food {
+  background-color: #fbbfca;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  color: #ffeed6;
+}
+.overlay-content {
+  text-align: center;
+}
+.overlay-content button {
+  background-color: #875053;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffeed6;
+  cursor: pointer;
+}
+.overlay-content button:hover {
+  background-color: #d2bf55;
+}
+.game-info {
+  text-align: center;
+  color: #2b061e;
+  margin: 10px 0;
+}
